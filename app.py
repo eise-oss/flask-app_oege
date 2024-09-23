@@ -1,14 +1,10 @@
 from flask import Flask
-import datetime
 
-app = Flask(  # Create a flask app
-    __name__,
-    template_folder='templates',  # Name of html file folder
-    static_folder='static'  # Name of directory for static files
-)
-
+app = Flask(__name__)
 
 @app.route('/')
-def mainPage():
-  date = datetime.datetime.now()
-  return f"Datum: {date}"
+def index():
+  return '<h1>Helllo World!</h1>'
+
+if __name__ == '__main__':
+  app.run()
